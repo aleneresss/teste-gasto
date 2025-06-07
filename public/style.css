@@ -1,209 +1,126 @@
 /* Reset básico */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
-  background-color: #121212;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #e0e0e0;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  padding: 2rem;
 }
 
-header {
-  width: 100%;
-  max-width: 700px;
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-header h1 {
-  font-weight: 700;
-  color: #03a9f4; /* azul brilhante */
-  text-shadow: 0 0 8px #03a9f4;
-  margin-bottom: 15px;
-}
-
-.desativado {
-  opacity: 0.5;
-  pointer-events: none;
-  user-select: none;
-}
-
-.usuario-input {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.usuario-input input {
-  padding: 10px 15px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 6px;
-  width: 230px;
-  background-color: #222;
-  color: #e0e0e0;
-  box-shadow: inset 0 0 5px #03a9f4;
-}
-
-.usuario-input input::placeholder {
-  color: #777;
-}
-
-.usuario-input button {
-  padding: 10px 20px;
-  background-color: #03a9f4;
-  border: none;
-  border-radius: 6px;
-  color: #121212;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 0 8px #03a9f4;
-  transition: background-color 0.3s ease;
-}
-
-.usuario-input button:hover {
-  background-color: #0288d1;
-  box-shadow: 0 0 12px #0288d1;
-}
-
-main {
-  width: 100%;
-  max-width: 700px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.painel-info {
-  width: 100%;
-  background-color: #1e1e1e;
-  border-radius: 10px;
-  padding: 15px 20px;
-  margin-bottom: 15px;
-  box-shadow: 0 0 12px #03a9f4aa;
-  display: flex;
-  justify-content: space-around;
-  color: #03a9f4;
-  font-weight: 600;
-  font-size: 0.95rem;
-  user-select: none;
-}
-
-.total-display {
-  margin-top: 10px;
-  color: #90caf9;
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-.gastos-container {
-  width: 100%;
-  background-color: #1a1a1a;
+/* Container principal */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #121212;
+  padding: 2rem;
   border-radius: 12px;
-  padding: 10px;
-  box-shadow: 0 0 15px #03a9f4cc inset;
-  max-height: 400px;
-  overflow-y: auto;
-  margin-bottom: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
-.gasto-item {
-  background-color: #272727;
-  margin-bottom: 10px;
-  padding: 12px 18px;
-  border-radius: 10px;
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #4fc3f7;
+}
+
+/* Form de usuário */
+.usuario-form {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 0 5px #0288d1;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
 }
 
-.gasto.pago {
-  background-color: #004d40aa; /* verde escuro translúcido */
-  color: #a5d6a7;
-  text-decoration: line-through;
-  font-style: italic;
-}
-
-.gasto-item > div:first-child {
-  max-width: 75%;
-  word-break: break-word;
-}
-
-.gasto-item strong {
-  font-size: 1.05rem;
-  color: #90caf9;
-}
-
-.gasto-item small {
-  font-size: 0.8rem;
-  color: #bbbbbb;
-}
-
-.gasto-item-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.gasto-item-controls input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-
-.gasto-item-controls button {
+.usuario-form input {
+  flex: 1;
+  padding: 0.5rem 1rem;
   border: none;
-  background: transparent;
-  color: #90caf9;
-  font-size: 1.2rem;
-  cursor: pointer;
-  padding: 5px;
   border-radius: 6px;
-  transition: background-color 0.2s ease;
+  background: #1e1e1e;
+  color: #fff;
 }
 
-.gasto-item-controls button:hover {
-  background-color: #0288d1;
+.usuario-form button {
+  padding: 0.5rem 1.2rem;
+  background: #4fc3f7;
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.gasto-item-controls button.delete {
-  color: #e53935;
+.usuario-form button:hover {
+  background: #03a9f4;
+}
+
+/* Painel de info */
+.painel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
 #btn-novo-gasto {
-  padding: 14px 28px;
-  font-size: 1.1rem;
+  background: #2196f3;
+  color: #fff;
   border: none;
-  border-radius: 12px;
-  background-color: #03a9f4;
-  color: #121212;
-  font-weight: 700;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 12px #03a9f4;
-  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
 }
 
 #btn-novo-gasto:disabled {
-  background-color: #555;
+  opacity: 0.5;
   cursor: not-allowed;
-  box-shadow: none;
 }
 
-#btn-novo-gasto:hover:not(:disabled) {
-  background-color: #0288d1;
-  box-shadow: 0 0 20px #0288d1;
+/* Lista de gastos */
+.gastos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.gasto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1e1e1e;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.gasto.pago {
+  background: #2e7d32;
+  color: #d0ffd6;
+}
+
+.gasto button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+  color: #90caf9;
+}
+
+.gasto input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-left: 1rem;
 }
 
 /* Modal */
@@ -211,116 +128,82 @@ main {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(18, 18, 18, 0.9);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   display: none;
-  justify-content: center;
   align-items: center;
-  z-index: 999;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .modal-content {
-  background-color: #222;
-  padding: 30px 35px;
-  border-radius: 14px;
-  width: 90%;
-  max-width: 420px;
-  box-shadow: 0 0 30px #03a9f4bb;
-  color: #e0e0e0;
+  background: #212121;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
 
 .modal-content h2 {
-  margin-bottom: 20px;
-  color: #03a9f4;
-  text-align: center;
-  font-weight: 700;
-}
-
-.modal-content label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: #90caf9;
+  color: #4fc3f7;
 }
 
 .modal-content input[type="text"],
 .modal-content input[type="number"],
 .modal-content input[type="date"] {
-  width: 100%;
-  padding: 10px 14px;
-  margin-bottom: 15px;
+  padding: 0.5rem;
   border: none;
-  border-radius: 8px;
-  background-color: #333;
-  color: #e0e0e0;
-  font-size: 1rem;
-  box-shadow: inset 0 0 6px #03a9f4cc;
+  border-radius: 6px;
+  background: #1e1e1e;
+  color: #fff;
 }
 
-.checkbox-label {
+.modal-content label {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  margin-bottom: 25px;
-  color: #90caf9;
-  cursor: pointer;
-  user-select: none;
-}
-
-.checkbox-label input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
+  gap: 0.5rem;
 }
 
 .modal-buttons {
   display: flex;
-  justify-content: space-between;
-  gap: 15px;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .modal-buttons button {
-  flex: 1;
-  padding: 12px 0;
-  font-weight: 700;
-  font-size: 1rem;
-  border-radius: 10px;
+  padding: 0.5rem 1rem;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 0 10px #03a9f4aa;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
 }
 
 #btn-salvar {
-  background-color: #03a9f4;
-  color: #121212;
-}
-
-#btn-salvar:hover {
-  background-color: #0288d1;
+  background: #4caf50;
+  color: #fff;
 }
 
 #btn-cancelar {
-  background-color: #555;
-  color: #ddd;
+  background: #f44336;
+  color: #fff;
 }
 
-#btn-cancelar:hover {
-  background-color: #777;
-}
+@media (max-width: 600px) {
+  .usuario-form {
+    flex-direction: column;
+  }
 
-/* Scrollbar customizada para gastos container */
-.gastos-container::-webkit-scrollbar {
-  width: 8px;
-}
+  .gasto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.gastos-container::-webkit-scrollbar-thumb {
-  background-color: #03a9f4aa;
-  border-radius: 10px;
-}
-
-.gastos-container::-webkit-scrollbar-track {
-  background-color: #1a1a1a;
+  .modal-content {
+    margin: 1rem;
+  }
 }
